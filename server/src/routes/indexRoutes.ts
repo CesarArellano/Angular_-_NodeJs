@@ -11,4 +11,4 @@ class IndexRoutes {
 }
 
 const indexRoutes = new IndexRoutes();
-export default indexRoutes.router;
+export default indexRoutes.router; // Se exporta el objeto indexRoutes con el atributo router.

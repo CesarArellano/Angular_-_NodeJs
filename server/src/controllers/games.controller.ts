@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
 import pool from '../database';
 
+// Se declaran los EndPoints.
+
 class GamesController {
     public async list(req: Request, res:Response){
         //res.json({'text': 'Listing games'});

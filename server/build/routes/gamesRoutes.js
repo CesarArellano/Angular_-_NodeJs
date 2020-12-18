@@ -11,7 +11,11 @@ class GamesRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', games_controller_1.default.games);
+        this.router.get('/', games_controller_1.default.list);
+        this.router.get('/:id', games_controller_1.default.getOne);
+        this.router.post('/', games_controller_1.default.create); //  Con Postman haremos las peticiones POST.
+        this.router.put('/:id', games_controller_1.default.update);
+        this.router.delete('/:id', games_controller_1.default.delete);
     }
 }
 const gamesRoutes = new GamesRoutes();

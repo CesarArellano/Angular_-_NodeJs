@@ -7,7 +7,11 @@ class GamesRoutes {
         this.config();
     }
     config():void{
-        this.router.get('/', gamesController.games);
+        this.router.get('/', gamesController.list);
+        this.router.get('/:id', gamesController.getOne);
+        this.router.post('/',gamesController.create); //  Con Postman haremos las peticiones POST.
+        this.router.put('/:id',gamesController.update);
+        this.router.delete('/:id', gamesController.delete);
     }
 }
 

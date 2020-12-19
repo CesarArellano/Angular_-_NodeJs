@@ -23,7 +23,7 @@ export class GamesService {
   saveGame(game: Game){
     return this.http.post(`${ this.API_URL }/games`, game);
   }
-  updateGame(id: string, updateGame:Game):Observable<Game>{
+  updateGame(id: string|number, updateGame:Game):Observable<Game>{
     return this.http.put(`${ this.API_URL }/games/${ id }`, updateGame);
   }
 }

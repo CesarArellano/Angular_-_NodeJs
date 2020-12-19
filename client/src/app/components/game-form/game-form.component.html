@@ -1,6 +1,6 @@
 <h2 class="text-center">Add Game</h2>
 <div class="row">
-    <div class="col-md-4 offset-md-4">
+    <div class="col-md-4 offset-md-2">
         <div class="card">
             <div class="card-body">
                 <form>
@@ -13,11 +13,18 @@
                     <div class="form-group">
                         <input type="url" name="image" placeholder="Image" [(ngModel)]="game.image" class="form-control" autofocus>
                     </div>
-                    <button class="btn btn-success btn-block" (click)="saveNewGame()">
-                        Save
+                    <button class="btn btn-success btn-block" (click)="edit == true ? updateGame() :saveNewGame()">
+                        {{ edit == true ? 'Edit' : 'Save' }}
                     </button>
                 </form>
             </div>
         </div>
     </div>
+    <div class="col-md-4">
+        <div class="card card-body text-center">
+            <img [src]="game.image == '' ? '/assets/noImage.png' : game.image" class="card-img-top"> <!--Ternarios en Angular -->
+            <h3>{{ game.idGame}} - {{ game.title == '' ? 'Game title' : game.title }}</h3>
+            <p >{{ game.description == '' ? 'Write your description' : game.description }}</p>
+            <p> {{ game.created_at | date: 'yyyy-MM-dd' }} </p>
+        </div>
 </div>
